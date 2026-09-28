@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Student Feedback</title>
+</head>
+<body>
+
+```
+<h1>Student Feedback</h1>
+
+<a href="{% url 'feedback_create' %}">Submit Feedback</a>
+
+<hr>
+
+{% for feedback in feedbacks %}
+
+    <h3>{{ feedback.student_name }}</h3>
+
+    <p>Course: {{ feedback.course }}</p>
+
+    <p>Rating: {{ feedback.rating }}</p>
+
+    <p>Comment: {{ feedback.comment }}</p>
+
+    <hr>
+
+{% empty %}
+
+    <p>No feedback has been submitted yet.</p>
+
+{% endfor %}
+```
+
+</body>
+</html>
